@@ -1,0 +1,21 @@
+<launch>
+  <arg name="screen_pos_x" default="0" />
+  <arg name="screen_pos_y" default="0" />
+  <arg name="font_size" default="240" />
+  <arg name="full_screen" default="false" />
+  <arg name="screen_size_width" default="1920" />
+  <arg name="screen_size_height" default="1080" />
+  <arg name="font_style" default="Arial" />
+  <arg name="state_topic_name" default="/state_interpreter/state_text" />
+
+  <node pkg="state_viewer" type="state_viewer_node" name="state_viewer" output="screen" respawn="true">
+    <param name="screen_pos_x" value="$(arg screen_pos_x)" />
+    <param name="screen_pos_y" value="$(arg screen_pos_y)" />
+    <param name="font_size" value="$(arg font_size)" />
+    <param name="full_screen" value="$(arg full_screen)" />
+    <param name="screen_size_width" value="$(arg screen_size_width)" />
+    <param name="screen_size_height" value="$(arg screen_size_height)" />
+    <param name="font_style" value="$(arg font_style)" />
+    <param name="state_topic_name" value="$(arg state_topic_name)" />
+  </node>
+</launch>
